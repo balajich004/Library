@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+.container{
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    height: 100vh;
+}
+.header{
+    background-color: white;
+    /* background-color: yellow; */
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:1rem;
+}
+.library{
+    /* background-color: red; */
+    grid-row: 2/3;
+}
+.title{
+    font-size: 3rem;
+    font-weight: bold;
+
+}
