@@ -14,8 +14,37 @@
                 <button class="addbook"><span class="plus">&plus;</span>Add book</button>
             </div>
         </div>
-        <div class="library"></div>
+        <div class="library">
+            <dialog id="popup">
+                <form method="dialog">
+                    <div class="title-div">
+                        <label for="title">Book Title*</label>
+                        <input id="title" name="title" type="text" placeholder="ex:A Song of Ice and Fire" required>
+                    </div>
+                    <div class="author-div">
+                        <label for="author">Book Author*</label>
+                        <input id="author" name="author" type="text" placeholder="ex:George R.R Martin" required>
+                    </div>
+                    <div class="pages-div">
+                        <label for="pages">No.of pages*</label>
+                        <input id="pages" name="pages" type="number" placeholder="ex:5173" required>
+                     </div>
+                     <div class="read">
+                        <input type="radio" id="mread" name="readStatus" value="mread">
+                        <label for="mread">Mark as read</label>
+                        <input type="radio" id="nread" name="readStatus" value="nread">
+                        <label for="nread">Not read</label>
+                    </div>
+                    <div class="buttons">
+                    <button type="submit" id="submit">Submit</button>
+                    <button id="close">close</button>
+                </div>
+                </form>
+            </dialog>
+            <!-- <div class="hi" style="width: 100px; height: 100px; background-color: white;"></div> -->
+        </div>
     </div>
+    
     <script src="./scripts/script.js"></script>
 </body>
 </html>
