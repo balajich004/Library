@@ -27,7 +27,12 @@ body{
 .library{
     /* background-color: red; */
     grid-row: 2/3;
-    grid-template-columns: repeat(auto-fit,minmax(250px,0.75fr));
+    display: grid;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    row-gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit,minmax(250px,0.45fr));
+    grid-template-rows: repeat(auto-fit,minmax(250px,0.45fr));
 }
 .title{
     font-size: 3rem;
@@ -142,3 +147,42 @@ label:hover{
 .read label{
     margin-left: 5px;
 }
+
+.book-c{
+    font-family:Arial;
+    display:flex;
+    flex-direction:column;
+    gap:0.75rem;
+    width:230px;
+    padding:1rem;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+    border-radius: 8px;
+  }
+  .img-c img{
+    height:80px;
+    width:80px;
+  }
+  .book-t{
+    font-weight:bold;
+    font-size:1.5rem;
+  }
+  .markread{
+    border:none;
+    padding:0.75rem;
+    font-weight:bold;
+    border-radius:8px;
+    background-color:lightcoral;
+    color:white
+  }
+  dialog::backdrop{
+     background-image: linear-gradient(
+    45deg,
+    white,
+    white,
+    white,
+    white
+  ); 
+  opacity: 0.55;
+  }

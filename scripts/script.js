@@ -1,3 +1,5 @@
+// document.addEventListener("DOMContentLoaded", () => {
+
 const library=document.querySelector(".library");
 const add=document.querySelector(".addbook");
 const dialog=document.querySelector("dialog");
@@ -14,11 +16,8 @@ function Books(title,author,pages,read){
     this.pages=pages;
     this.read=read;
 }
-function addToLibrary(){}
-function display(){
-    myLibrary.map((book)=>{
-        
-    });
+function addToLibrary(title,author,pages,selectedValue){
+    myLibrary.push(new Books(title,author,pages,selectedValue));
 }
 submit.addEventListener("click",()=>{
     let title=btitle.value;
@@ -30,9 +29,31 @@ submit.addEventListener("click",()=>{
     } else {
         selectedValue="Marked as Not Read";
     }
-    myLibrary.push(new Books(title,author,pages,selectedValue));
+    addToLibrary(title,author,pages,selectedValue);
+    let bookc=document.createElement("div");
+    bookc.classList.add("book-c");
+    bookc.innerHTML=`<div class="book-c">
+    <div class="img-c">
+      <img src="./images/book-img.png" alt="some">
+    </div>
+    <div class="book-t">${title}</div>
+    <div class="by">by</div>
+    <div class="book-a">${author}</div>
+    <div class="book-p">No of pages: ${pages}</div>
+    <button class="markread">${selectedValue}</button>
+  </div>
+    `;
+    dialog.close();
+    library.appendChild(bookc);
+    clearfield();
     console.log(myLibrary);
 });
+function clearfield(){
+    btitle.value="";
+    bauthor.value="";
+    bpages.value="";
+    selectedRadio.value=none;
+}
 add.addEventListener("click", () => {
     dialog.showModal();
   });
