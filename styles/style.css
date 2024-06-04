@@ -58,6 +58,7 @@ body{
 }
 dialog{
     border-radius: 1rem;
+    /* display: flex; */
     flex-direction: column;
     border: 1px solid #ccc;
     padding: 20px;
@@ -66,6 +67,9 @@ dialog{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-image: url(../images/background-img.jpg);
+    background-size: cover;
+    gap:1rem;
 }
 form{
     display: flex;
@@ -74,6 +78,9 @@ form{
 }
 label{
     margin-right: 1rem;
+    background-color: white;
+    padding: 3px;
+    border-radius: 3px;
 }
 .title-div>label{
     margin-right: 2rem;
@@ -104,4 +111,30 @@ input{
     padding: 8px;
     border-radius: 8px;
     color: black;
+}
+.dialog-title{
+    background-color: white;
+    text-align: center;
+    padding: 0.656rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 8px;
+}
+label:hover{
+    background-color: black;
+    color: white;
+}
+#submit:hover{
+    background-color: lightgreen;
+    color: black;
+}
+#close:hover{
+    background-color: lightcoral;
+    color: black;
+}
+.read{
+    display: flex;
+}
+.read label{
+    margin-left: 5px;
 }
