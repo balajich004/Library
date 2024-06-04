@@ -70,6 +70,8 @@ dialog{
     background-image: url(../images/background-img.jpg);
     background-size: cover;
     gap:1rem;
+    border: 1px solid white;
+    box-shadow: 0 0 1000px rgba(0, 0, 0, 1);
 }
 form{
     display: flex;
@@ -119,10 +121,12 @@ input{
     font-size: 1.25rem;
     font-weight: bold;
     border-radius: 8px;
+    margin-bottom: 8px;
 }
 label:hover{
     background-color: black;
     color: white;
+    cursor: pointer;
 }
 #submit:hover{
     background-color: lightgreen;
