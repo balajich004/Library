@@ -15,13 +15,8 @@ function Book(title,author,pages,read){
     this.title=title;
     this.author=author;
     this.pages=pages;
-    this.read=function(){
-        if(read=="mread")
-            return true;
-        else
-            return false;
+    this.read=(read==="mread")?true:false;
     }
-}
 mread.addEventListener("click",()=>{
     read="mread";
 });
@@ -30,11 +25,11 @@ nread.addEventListener("click",()=>{
 });
 function display(){
     myLibrary.map((obj)=>{
-        if(obj.read()){
+        if(obj.read){
             obj.read="Mark as Read";
         }
         else{
-            console.log(obj.read());
+            console.log(obj.read);
             obj.read="Mark as not read";
             console.log("hi")
         }
