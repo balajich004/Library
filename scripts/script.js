@@ -60,6 +60,7 @@ submit.addEventListener("click",()=>{
     clear();
     library.innerHTML="";
     display();
+    
 });
 addBook.addEventListener("click",()=>{
     dialog.showModal();
@@ -76,3 +77,18 @@ function clear(){
     dialog.close();
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    library.addEventListener("click", (event) => {
+        event.target.style.cursor="pointer";
+        if (event.target && event.target.classList.contains("markread")) {
+            if (event.target.innerHTML === "Mark as Read") {
+                event.target.style.backgroundColor = "green";
+                event.target.innerHTML = "Mark as not Read";
+            } else {
+                event.target.style.backgroundColor = "red";
+                event.target.innerHTML = "Mark as Read";
+            }
+        }
+    });
+});
+
