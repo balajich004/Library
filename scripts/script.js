@@ -44,6 +44,7 @@ function display(){
     <div class="book-a">${obj.author}</div>
     <div class="book-p">No of pages: ${obj.pages}</div>
     <button class="markread">${obj.read}</button>
+    <button class="remove">Remove</button>
     `;
     library.appendChild(book);
     });
