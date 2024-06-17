@@ -11,14 +11,17 @@ const submit=document.querySelector("#submit");
 const library=document.querySelector(".library");
 let read="nread";
 let myLibrary=[];
-function Book(title,author,pages,read){
-    this.title=title;
-    this.author=author;
-    this.pages=pages;
-    this.read=(read==="mread")?true:false;
+class Book{
+    constructor(title,author,pages,read){
+      this.title = title;   
+      this.author = author; 
+      this.pages = pages;   
+      this.read = (read === "mread") ? true : false;
     }
+  }
 mread.addEventListener("click",()=>{
     read="mread";
+    // Book.setread();
 });
 nread.addEventListener("click",()=>{
     read="nread";
@@ -73,18 +76,18 @@ function clear(){
     dialog.close();
     }
 }
-document.addEventListener('DOMContentLoaded', () => {
-    library.addEventListener("click", (event) => {
-        event.target.style.cursor="pointer";
-        if (event.target && event.target.classList.contains("markread")) {
-            if (event.target.innerHTML === "Mark as Read") {
-                event.target.style.backgroundColor = "green";
-                event.target.innerHTML = "Mark as not Read";
-            } else {
-                event.target.style.backgroundColor = "red";
-                event.target.innerHTML = "Mark as Read";
-            }
-        }
-    });
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     library.addEventListener("click", (event) => {
+//         event.target.style.cursor="pointer";
+//         if (event.target && event.target.classList.contains("markread")) {
+//             if (event.target.innerHTML === "Mark as Read") {
+//                 event.target.style.backgroundColor = "green";
+//                 event.target.innerHTML = "Mark as not Read";
+//             } else {
+//                 event.target.style.backgroundColor = "red";
+//                 event.target.innerHTML = "Mark as Read";
+//             }
+//         }
+//     });
+// });
 
