@@ -11,6 +11,7 @@ const submit=document.querySelector("#submit");
 const library=document.querySelector(".library");
 let read="nread";
 let myLibrary=[];
+let bookid=0;
 class Book{
     constructor(title,author,pages,read){
       this.title = title;   
@@ -38,6 +39,7 @@ function display(){
         }
             let book=document.createElement("div");
     book.classList.add("book-c");
+    book.id=`book-${bookid}`;
     book.innerHTML=`
     <div class="img-c">
       <img src="./images/book-img.png" alt="some">
@@ -47,10 +49,15 @@ function display(){
     <div class="book-a">${obj.author}</div>
     <div class="book-p">No of pages: ${obj.pages}</div>
     <button class="markread">${obj.read}</button>
-    <button class="remove">Remove</button>
+    <button class="remove" onclick="removebutt(${bookid})">Remove</button>
     `;
+    bookid++;
     library.appendChild(book);
     });
+}
+function removebutt(id){
+    const bookDiv=document.getElementById(`book-${id}`);
+    bookDiv.remove();
 }
 submit.addEventListener("click",()=>{
     if(title.value && author.value && pages.value){
@@ -76,18 +83,17 @@ function clear(){
     dialog.close();
     }
 }
-// document.addEventListener('DOMContentLoaded', () => {
-//     library.addEventListener("click", (event) => {
-//         event.target.style.cursor="pointer";
-//         if (event.target && event.target.classList.contains("markread")) {
-//             if (event.target.innerHTML === "Mark as Read") {
-//                 event.target.style.backgroundColor = "green";
-//                 event.target.innerHTML = "Mark as not Read";
-//             } else {
-//                 event.target.style.backgroundColor = "red";
-//                 event.target.innerHTML = "Mark as Read";
-//             }
-//         }
-//     });
-// });
-
+document.addEventListener('DOMContentLoaded', () => {
+    library.addEventListener("click", (event) => {
+        event.target.style.cursor="pointer";
+        if (event.target && event.target.classList.contains("markread")) {
+            if (event.target.innerHTML === "Mark as Read") {
+                event.target.style.backgroundColor = "green";
+                event.target.innerHTML = "Mark as not Read";
+            } else {
+                event.target.style.backgroundColor = "red";
+                event.target.innerHTML = "Mark as Read";
+            }
+        }
+    });
+});

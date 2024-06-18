@@ -166,7 +166,8 @@ label:hover{
     font-weight:bold;
     border-radius:8px;
     background-color:skyblue;
-    color:white
+    color:white;
+    cursor: pointer;
   }
   dialog::backdrop{
      background-image: linear-gradient(
@@ -190,3 +191,12 @@ label:hover{
     text-decoration: none;
     color: wheat;
 } 
+.remove{
+    background-color: lightcoral;
+    border:none;
+    padding:0.75rem;
+    font-weight:bold;
+    border-radius:8px;
+    color:white;
+    cursor: pointer;
+}
