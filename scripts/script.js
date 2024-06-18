@@ -30,11 +30,11 @@ nread.addEventListener("click",()=>{
 function display(){
     myLibrary.map((obj)=>{
         if(obj.read){
-            obj.read="Mark as Read";
+            obj.read="Mark as not Read";
         }
         else{
             console.log(obj.read);
-            obj.read="Mark as not read";
+            obj.read="Mark as read";
             console.log("hi")
         }
             let book=document.createElement("div");
@@ -66,7 +66,7 @@ submit.addEventListener("click",()=>{
     clear();
     library.innerHTML="";
     display();
-    
+    // saveLibrary();
 });
 addBook.addEventListener("click",()=>{
     dialog.showModal();
@@ -84,6 +84,7 @@ function clear(){
     }
 }
 document.addEventListener('DOMContentLoaded', () => {
+    // loadLibrary();
     library.addEventListener("click", (event) => {
         event.target.style.cursor="pointer";
         if (event.target && event.target.classList.contains("markread")) {
@@ -97,3 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// function saveLibrary() {
+//     localStorage.setItem('myLibrary',JSON.stringify(myLibrary));
+// }
+// function loadLibrary() {
+//     const storedLibrary = JSON.parse(localStorage.getItem('myLibrary')) || [];
+//     storedLibrary.forEach(book => {
+//         myLibrary.push(book);
+//         createBookDiv(book);
+//     });
+// }
+// // `JSON.stringify(myLibrary)` converts the `myLibrary` array to a JSON string.
+// // `localStorage.setItem('myLibrary', JSON.stringify(myLibrary))` saves this JSON string in localStorage under the key 'myLibrary'.
+// // `localStorage.getItem('myLibrary')` retrieves the JSON string from localStorage.
+//     // `JSON.parse(localStorage.getItem('myLibrary'))` converts the JSON string back into a JavaScript object (array).
+//     // If there's no stored data, it defaults to an empty array `[]`//
